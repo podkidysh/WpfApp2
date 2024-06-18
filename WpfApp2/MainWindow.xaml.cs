@@ -48,18 +48,18 @@ namespace WpfApp2
         {
             if (string.IsNullOrEmpty(tbLogin.Text) && string.IsNullOrEmpty(pbPass.Password))
             {
-                MessageBox.Show("vvedite vse dannie", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("введите все данные", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (captchBool == false)
             {
                 if (tbLogin.Text == "admin" && pbPass.Password == "admin")
                 {
-                    MessageBox.Show("yra vi voshli");
+                    MessageBox.Show("ура вы вошли");
                 }
                 else
                 {
-                    MessageBox.Show("vvedite vse dannie", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("неверные данные", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     captchBool = true;
                     spCap.Visibility = Visibility.Visible;
                     return;
@@ -70,18 +70,18 @@ namespace WpfApp2
             {
                 if (string.IsNullOrEmpty(tbCap.Text))
                 {
-                    MessageBox.Show("vvedite cap", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("введите капчу", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
                 if (tbLogin.Text == "admin" && pbPass.Password == "admin" && tbCap.Text == captchIsTrue[captchInt])
                 {
-                    MessageBox.Show("yra vi voshli");
+                    MessageBox.Show("ура вы вошли");
                     captchBool = false;
                     spCap.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    MessageBox.Show("vvedite cap", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("неверные данные", "error!", MessageBoxButton.OK, MessageBoxImage.Error);
                     Title = "block";
                     Thread.Sleep(10000);
                     Title = "authorizations";
